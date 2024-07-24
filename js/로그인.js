@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // 회원가입 폼 HTML을 가져와서 모달에 삽입
-    fetch('회원가입.html')
+    fetch('/HTML/회원가입.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('joinFormContainer').innerHTML = data;
@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 closeModal.addEventListener("click", function () {
                     document.getElementById('joinModal').style.display = 'none';
+                });
+
+                // login 버튼 클릭 시 index.html로 이동
+                let login = document.querySelector(".login");
+                login.addEventListener("click", function () {
+                    alert("로그인 되었습니다");
+                    window.location.href = 'index.html';
                 });
             `;
             document.body.appendChild(script);
